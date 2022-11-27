@@ -118,65 +118,7 @@ func save_lottonumbers_csv(name string, numbers [][]int) {
 
 }
 
-// Hotels
-type hotel struct {
-	name     string
-	location int
-	exchange bool
-	next     *hotel
-}
 
-func four() []hotel {
-
-	hotel4 := hotel{"TopNotch", 1500, true, nil}
-	hotel3 := hotel{"Medium", 400, true, &hotel4}
-	hotel2 := hotel{"Luxury", 100, false, &hotel3}
-	hotel1 := hotel{"Budget", 0, true, &hotel2}
-
-	tour := []hotel{hotel1, hotel2, hotel3, hotel4}
-	tour_validate(4, tour)
-	return tour
-}
-
-func tour_validate(length int, tour []hotel) {
-	if tour[0].exchange && tour[length-1].exchange {
-		fmt.Println("TOUR VALID")
-		fmt.Println(tour[0].next.name)
-		return
-	}
-	fmt.Println("TOUR INVALID")
-
-}
-
-func tour_csv(name string, tour []hotel) {
-	//takes a file name and an array of integers and writes the numbers to the file
-	file, _ := os.Create(name)
-	defer file.Close()
-
-	w := csv.NewWriter(file)
-	//write the numbers to the file
-	var data [][]string
-
-	for _, value := range tour {
-		row := []string{value.name, strconv.Itoa(value.location), strconv.FormatBool(value.exchange)}
-		data = append(data, row)
-
-	}
-	w.WriteAll(data)
-}
-
-func read_tour_csv(name string) {
-	//takes a file name and reads the file
-	file, _ := os.Open(name)
-	defer file.Close()
-
-	r := csv.NewReader(file)
-	records, err := r.ReadAll()
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Println(records)
-}
 func main() {
 	/*
 		create_file("file1.txt")

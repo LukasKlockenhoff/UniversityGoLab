@@ -75,38 +75,3 @@ func three() {
 
 }
 
-/*
-type hotel struct {
-	name     string
-	location int
-	exchange bool
-	next     *hotel
-}
-
-
-func four() {
-
-	hotel4 := hotel{"TopNotch", 1500, true, nil}
-	hotel3 := hotel{"Medium", 400, true, &hotel4}
-	hotel2 := hotel{"Luxury", 100, false, &hotel3}
-	hotel1 := hotel{"Budget", 0, true, &hotel2}
-
-	tour := []hotel{hotel1, hotel2, hotel3, hotel4}
-	tour_validate(4, tour)
-}
-
-func tour_validate(length int, tour []hotel) {
-	if tour[0].exchange && tour[length-1].exchange {
-		fmt.Println("TOUR VALID")
-		fmt.Println(tour[0].next.name)
-		return
-	}
-	fmt.Println("TOUR INVALID")
-
-}
-
-/*
-func main() {
-	four()
-}
-*/
