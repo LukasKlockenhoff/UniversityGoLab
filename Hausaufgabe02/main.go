@@ -1,16 +1,3 @@
-// Aufgabe 1: Hotelverwaltung
-// Entwickeln Sie ein Programm, dass eine Liste von Hotels bestehend aus Namen und Entfernung zum nächsten Hotel aus einer CSV-Datei einliest. (10 P)
-
-/*
-* Alpenrose, 10
-* Schwarzer-Adler, 20
-* Budget, 22
-* Blauer-Morgen, 34
-* Sonnenuntergang, 19
-* Lindenhof, 22
-* drei-Tannen, 17
- */
-
 package main
 
 import (
